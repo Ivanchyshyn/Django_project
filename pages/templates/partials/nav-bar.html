@@ -1,0 +1,28 @@
+<div class="nav-link">
+  <table class="nav-table">
+  {% if request.user.is_staff %}
+  <th>
+    <a href="/admin">Admin</a>
+  </th>
+  {% endif %}
+  <th>
+    <a href="{% url 'home' %}">Main page</a>
+  </th>
+  <th>
+    <a href="{% url 'blog' %}">My Blog</a>
+  </th>
+  <th>
+    <a href="{% url 'about' %}">About site</a>
+  </th>
+  <th>
+    <a href="{% url 'contact' %}">Contacts</a>
+  </th>
+  </table>
+</div>
+<style>
+  .nav-table, th {
+    border: 1px solid black;
+    padding: 5px;
+    border-collapse: collapse;
+  }
+</style>

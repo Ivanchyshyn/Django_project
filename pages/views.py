@@ -2,8 +2,21 @@ from django.shortcuts import render
 from django.template import RequestContext
 from django.http import HttpResponse
 
-def home_view(request):
-    return render(request, 'index.html')
+def home_view(request, *args, **kwargs):
+    my_context = {}
+    return render(request, 'index.html', my_context)
 
-def page1(request):
-    return HttpResponse("<h1>This is page1</h1><p>Go to <a href='/'>home</a></p>")
+
+def blog(request, *args, **kwargs):
+    my_context = {}
+    return render(request, 'blog.html', my_context)
+
+
+def about(request, *args, **kwargs):
+    my_context = {}
+    return render(request, 'about.html', my_context)
+
+
+def contact(request, *args, **kwargs):
+    my_context = {}
+    return render(request, "contact.html", my_context)
