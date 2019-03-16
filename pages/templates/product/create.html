@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block title %}Create product{% endblock %}</title>
+</head>
+<body>
+{% block pagecontent %}
+	<form>
+	{{ form.as_p }}
+	<input type="submit" value="Save" />
+	</form>
+{% endblock %}
+</body>
+</html>

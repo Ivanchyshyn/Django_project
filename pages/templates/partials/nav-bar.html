@@ -1,28 +1,18 @@
-<div class="nav-link">
-  <table class="nav-table">
+<div class="nav-link" style="width: 100%;overflow: hidden;">
   {% if request.user.is_staff %}
-  <th>
     <a href="/admin">Admin</a>
-  </th>
   {% endif %}
-  <th>
     <a href="{% url 'home' %}">Main page</a>
-  </th>
-  <th>
     <a href="{% url 'blog' %}">My Blog</a>
-  </th>
-  <th>
+    <a href="{% url 'detail' %}">Product details</a>
+    <a href="{% url 'create' %}">Create product</a>
     <a href="{% url 'about' %}">About site</a>
-  </th>
-  <th>
     <a href="{% url 'contact' %}">Contacts</a>
-  </th>
-  </table>
 </div>
 <style>
-  .nav-table, th {
+  .nav-link a {
     border: 1px solid black;
-    padding: 5px;
+    padding: 7px;
     border-collapse: collapse;
   }
 </style>
