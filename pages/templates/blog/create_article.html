@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block title %}Create article{% endblock %}</title>
+	{% load static %}
+	{% block css %}<link rel="stylesheet" type="text/css" href="{% static 'css/forms.css' %}">{% endblock %}
+</head>
+<body>
+{% block pagecontent %}
+<form method="POST"> {% csrf_token %}
+	{{ form.as_p }}
+	<input type="submit" value="Publish">
+</form>
+{% endblock %}
+</body>
+</html>

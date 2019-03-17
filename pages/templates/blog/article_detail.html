@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block title %}object.title{% endblock %}</title>
+</head>
+<body>
+{% block pagecontent %}
+<p>Author - {{ object.author }}</p>
+<p>Title - {{ object.title }}</p>
+<p>Subject - {{ object.subject }}</p>
+<p>Text - {{ object.text }}</p>
+{% endblock %}
+</body>
+</html>

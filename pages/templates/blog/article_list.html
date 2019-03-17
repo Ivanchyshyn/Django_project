@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block title %}List of articles{% endblock %}</title>
+</head>
+<body>
+{% block pagecontent %}
+{% for obj in object_list %}
+	<p>{{ obj.author }} - <a href="{{ obj.get_absolute_url }}">{{ obj.title }}</a></p>
+{% endfor %}
+{% endblock %}
+</body>
+</html>
