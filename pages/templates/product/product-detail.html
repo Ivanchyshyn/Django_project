@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block title %}{{ object.title }}{% endblock %}</title>
+</head>
+<body>
+{% block pagecontent %}
+
+	<p>Title - {{ object.title }}</p>
+	<p>Summary - {{ object.summary }}</p>
+	<p>Price - {{ object.price }}</p>
+	{% if object.description %}
+	<p>Description - {{object.description}}</p>
+	{% endif %}
+
+{% endblock %}
+</body>
+</html>

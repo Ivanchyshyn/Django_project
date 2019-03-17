@@ -7,13 +7,10 @@
 </head>
 <body>
 {% block pagecontent %}
-<form>
-	<input type="number" value={{ object.id }} min=1 max={{ length }} name="id" />
-	<input type="submit" value="Get product" />
-</form>
-	<p>Title - {{ object.title }} </p>
-	<p>Summary - {{object.summary }}</p>
-	<p>Price - {{ object.price }}</p><br>
+
+{% for instance in object_list %}
+	<p>{{ instance.id }} - <a href="{{ instance.get_absolute_url }}">{{ instance.title }}</a></p>
+{% endfor %}
 	
 {% endblock %}
 </body>

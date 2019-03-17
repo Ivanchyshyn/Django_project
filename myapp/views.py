@@ -29,11 +29,16 @@ def product_create_view(request):
 def product_detail_view(request):
     context = {}
     if request.method == 'GET':
-        my_id = request.GET.get('id')
-        if not my_id: my_id=1
-        obj = get_object_or_404(Product, id=my_id)
+        queryset = Product.objects.all()
         context = {
-            'object': obj,
-            'length': len(Product.objects.all())
+            'object_list': queryset
         }
     return render(request, "product/detail.html", context)
+
+
+def dynamic_lookup_view(request, id):
+    obj = get_object_or_404(Product, id=id)
+    context = {
+        'object': obj
+    }
+    return render(request, "product/product-detail.html", context)
