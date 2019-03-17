@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/2.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.1/ref/settings/
 """
+from .settings_secret import *
 
 import os
 
@@ -17,9 +18,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'u@7@ih$nayc$593_*!q3w61yd7^#v^(x4rf9&j_j50ig)77-v-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -69,20 +67,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'django_project.wsgi.application'
-
-
-# Database
-# https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'django_db',
-        'USER': 'postgres',
-        'PASSWORD': 'qwerty',
-        'HOST': 'localhost',
-    }
-}
 
 
 # Password validation
