@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Product
 from .forms import ProductForm, RawProductForm
 
@@ -31,7 +31,7 @@ def product_detail_view(request):
     if request.method == 'GET':
         my_id = request.GET.get('id')
         if not my_id: my_id=1
-        obj = Product.objects.get(id=my_id)
+        obj = get_object_or_404(Product, id=my_id)
         context = {
             'object': obj,
             'length': len(Product.objects.all())

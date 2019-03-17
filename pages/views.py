@@ -7,9 +7,9 @@ def home_view(request, *args, **kwargs):
     return render(request, 'index.html', my_context)
 
 
-def blog(request, *args, **kwargs):
+def account(request, *args, **kwargs):
     my_context = {}
-    return render(request, 'blog.html', my_context)
+    return render(request, 'account.html', my_context)
 
 
 def about(request, *args, **kwargs):
