@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 class Product(models.Model):
     title = models.CharField(max_length=100)
@@ -7,4 +8,4 @@ class Product(models.Model):
     summary = models.TextField()
 
     def get_absolute_url(self):
-        return f'/detail/{self.id}/'
+        return reverse("myapp:product-detail", kwargs={'id':self.id})
