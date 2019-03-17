@@ -4,3 +4,4 @@ env
 __pycache__
 *.sublime-project
 *.sublime-workspace
+django_project/settings_secret.py
