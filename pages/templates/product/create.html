@@ -4,10 +4,12 @@
 <html>
 <head>
 	<title>{% block title %}Create product{% endblock %}</title>
+	{% load static %}
+	{% block css %}<link rel="stylesheet" href="{% static 'css/forms.css' %}">{% endblock %}
 </head>
 <body>
 {% block pagecontent %}
-	<form>
+	<form method="POST"> {% csrf_token %}
 	{{ form.as_p }}
 	<input type="submit" value="Save" />
 	</form>

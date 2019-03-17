@@ -7,9 +7,14 @@
 </head>
 <body>
 {% block pagecontent %}
+<form>
+	<input type="number" value=1 min=1 max={{ length }} name="id" />
+	<input type="submit" value="Get form" />
+</form>
 	<p>Title - {{ object.title }} </p>
-	<p>Summary - {{ object.summary }}</p>
-	<p>Price - {{ object.price }}</p>
+	<p>Summary - {{object.summary }}</p>
+	<p>Price - {{ object.price }}</p><br>
+	
 {% endblock %}
 </body>
 </html>
